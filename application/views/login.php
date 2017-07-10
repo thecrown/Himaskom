@@ -36,7 +36,7 @@
   <div class="login-box-body">
     <p class="login-box-msg"><b>Login First</b></p>
 
-    <?php echo form_open('login/validation_user'); ?>
+    <?php echo form_open("login/validation_user"); ?>
       <div class="form-group has-feedback">
         <input type="text" class="form-control" name="username" placeholder="Username">
         <span class="glyphicon glyphicon-user form-control-feedback"></span>
@@ -75,7 +75,18 @@
         <!-- /.col -->
       </div>
     <?php echo form_close(); ?>
-    <?php echo isset($errorLogin); ?>
+    <?php if(validation_errors()){ ?>
+                <?php echo validation_errors(); ?>
+            <?php
+            }
+            ?>
+            <?php
+            if(isset($errorLogin)){
+              echo "<left>";
+                echo $errorLogin; 
+              echo "</left>";
+            }
+            ?>
     <!--<div class="social-auth-links text-center">
       <p>- OR -</p>
       <a href="#" class="btn btn-block btn-social btn-facebook btn-flat"><i class="fa fa-facebook"></i> Sign in using

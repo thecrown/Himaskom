@@ -11,7 +11,7 @@ class Auth extends CI_Model {
         
         $query = $this->db->get_where('users',$datauser);
 
-        if($query->num_rows() >=0){
+        if($query->num_rows() >0){
         
             $attr = array(
             'curent_user_id' => $query->row(0)->idusers,
@@ -28,5 +28,8 @@ class Auth extends CI_Model {
             return false;
         }
     }
+        public function is_logged_in(){
+            return $this->session->userdata('curent_user_id') != False;
+        }
     
 }
