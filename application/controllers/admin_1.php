@@ -7,9 +7,7 @@ class Admin_1 extends CI_Controller{
         }
     }
     public function index(){
-        echo "berhasil login di ristek ";
-        echo $this->session->curent_name_user;
-        echo "<a href=".base_url("login/logout").">logout</a>";
-        print_r($this->session);
+        
+        $this->load->view('index_admin');
     }
 }
