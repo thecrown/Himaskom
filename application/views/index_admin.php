@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>AdminLTE 2 | Dashboard</title>
+  <title>HIMASKOM Database</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.7 -->
@@ -308,7 +308,17 @@
   <!-- Left side column. contains the logo and sidebar -->
   <aside class="main-sidebar">
     <!-- sidebar: style can be found in sidebar.less -->
-    <!--ini sidebar -->
+    <?php 
+          if (isset($sidebar)): 
+            $this->load->view('admin_1/'.$sidebar);
+          elseif(isset($add_dept)):
+            $this->load->view('content/'.$add_dept);
+    ?>
+    <?php
+          elseif(isset($update_dept)):
+            $this->load->view('content/'.$update_dept);
+          endif;
+    ?>
     <!-- /.sidebar -->
   </aside>
 
@@ -318,7 +328,17 @@
     
 
     <!-- isi content -->
-    
+    <?php 
+          if (isset($main_dashboard)): 
+            $this->load->view('admin_1/'.$main_dashboard);
+          elseif(isset($add_dept)):
+            $this->load->view('content/'.$add_dept);
+    ?>
+    <?php
+          elseif(isset($update_dept)):
+            $this->load->view('content/'.$update_dept);
+          endif;
+    ?>
     <!-- /.content -->
   </div>
   <!-- /.content-wrapper -->
