@@ -12,4 +12,9 @@ class Admin_1 extends CI_Controller{
         $this->load->view('index_admin',$data);
 
     }
+    public function view_pkm(){
+        $data['sidebar']="sidebar";
+        $data['view_pkm']="view_pkm";
+        $this->load->view('index_admin',$data);
+    }
 }

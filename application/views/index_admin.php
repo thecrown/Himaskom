@@ -27,7 +27,9 @@
   <link rel="stylesheet" href="<?php echo base_url('assets'); ?>/bower_components/bootstrap-daterangepicker/daterangepicker.css">
   <!-- bootstrap wysihtml5 - text editor -->
   <link rel="stylesheet" href="<?php echo base_url('assets'); ?>/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
-
+ <!-- DataTables -->
+  <link rel="stylesheet" href="<?php echo base_url('assets'); ?>/bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css">
+  
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
   <!--[if lt IE 9]>
@@ -311,12 +313,6 @@
     <?php 
           if (isset($sidebar)): 
             $this->load->view('admin_1/'.$sidebar);
-          elseif(isset($add_dept)):
-            $this->load->view('content/'.$add_dept);
-    ?>
-    <?php
-          elseif(isset($update_dept)):
-            $this->load->view('content/'.$update_dept);
           endif;
     ?>
     <!-- /.sidebar -->
@@ -331,8 +327,8 @@
     <?php 
           if (isset($main_dashboard)): 
             $this->load->view('admin_1/'.$main_dashboard);
-          elseif(isset($add_dept)):
-            $this->load->view('content/'.$add_dept);
+          elseif(isset($view_pkm)):
+            $this->load->view('admin_1/'.$view_pkm);
     ?>
     <?php
           elseif(isset($update_dept)):
@@ -581,7 +577,23 @@
 <script src="<?php echo base_url('assets'); ?>/dist/js/adminlte.min.js"></script>
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
 <script src="<?php echo base_url('assets'); ?>/dist/js/pages/dashboard.js"></script>
+<!-- DataTables -->
+<script src="<?php echo base_url('assets'); ?>/bower_components/datatables.net/js/jquery.dataTables.min.js"></script>
+<script src="<?php echo base_url('assets'); ?>/bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="<?php echo base_url('assets'); ?>/dist/js/demo.js"></script>
+<script>
+  $(function () {
+    $('#example1').DataTable()
+    $('#example2').DataTable({
+      'paging'      : true,
+      'lengthChange': false,
+      'searching'   : false,
+      'ordering'    : true,
+      'info'        : true,
+      'autoWidth'   : false
+    })
+  })
+</script>
 </body>
 </html>

@@ -57,7 +57,9 @@ class Login extends CI_Controller{
         
         if ($this->form_validation->run() == FALSE)
         {
-            echo validation_errors();
+            
+            $data = $this->create_captcha();
+            $this->load->view('login',$data);
         }else{
             $result = $this->Auth->user_validation();
 			 if($result==true){
