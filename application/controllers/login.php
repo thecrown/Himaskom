@@ -20,7 +20,7 @@ class Login extends CI_Controller{
         'img_height'=>70,
         'expiration'=>7200,
         'word_length'=>4,
-        'font_size'=>18
+        'font_size'=>14
         );
         
         $data_captcha = create_captcha($data);
