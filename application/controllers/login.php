@@ -81,7 +81,7 @@ class Login extends CI_Controller{
     function admin(){
         switch ($this->session->curent_bidang_user) {
                     case 1:
-                        redirect ('admin_1');
+                               redirect ('admin_1');
                         break;
                     case 2:
                         redirect ('admin_2');

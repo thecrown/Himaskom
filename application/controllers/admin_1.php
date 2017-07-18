@@ -17,4 +17,9 @@ class Admin_1 extends CI_Controller{
         $data['view_pkm']="view_pkm";
         $this->load->view('index_admin',$data);
     }
+    public function view_banksoal(){
+        $data['sidebar']="sidebar";
+        $data['view_banksoal']="view_banksoal";
+        $this->load->view('index_admin',$data);
+    }
 }

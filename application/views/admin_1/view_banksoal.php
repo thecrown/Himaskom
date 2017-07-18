@@ -21,11 +21,11 @@
                 <thead>
                 <tr>
                   <th>no</th>
-                  <th>Judul PKM</th>
-                  <th>Jenis</th>
-                  <th>Penulis</th>
+                  <th>Mata Kuliah</th>
                   <th>Tahun</th>
+                  <th>Keterangan</th>
                   <th>File</th>
+                  <th>Action</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -35,17 +35,17 @@
                   <td>Win 95+</td>
                   <td>4</td>
                   <td>X</td>
-                  <td>X</td>
+                  <td>ini action</td>
                 </tr>
                 </tbody>
                 <tfoot>
                 <tr>
                   <th>no</th>
-                  <th>Judul PKM</th>
-                  <th>Jenis</th>
-                  <th>Penulis</th>
+                  <th>Mata Kuliah</th>
                   <th>Tahun</th>
+                  <th>Keterangan</th>
                   <th>File</th>
+                  <th>Action</th>
                 </tr>
                 </tfoot>
               </table>

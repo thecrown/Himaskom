@@ -322,17 +322,15 @@
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     
-
+ 
     <!-- isi content -->
     <?php 
           if (isset($main_dashboard)): 
             $this->load->view('admin_1/'.$main_dashboard);
-          elseif(isset($view_pkm)):
+          elseif(isset($view_banksoal)):
+            $this->load->view('admin_1/'.$view_banksoal);
+         elseif(isset($view_pkm)):
             $this->load->view('admin_1/'.$view_pkm);
-    ?>
-    <?php
-          elseif(isset($update_dept)):
-            $this->load->view('content/'.$update_dept);
           endif;
     ?>
     <!-- /.content -->

@@ -12,7 +12,7 @@
       
       <!-- sidebar menu: : style can be found in sidebar.less -->
       <ul class="sidebar-menu" data-widget="tree">
-        <li class="active treeview">
+        <li class="treeview">
           <a href="#">
             <i class="fa fa-dashboard"></i> <span>PKM</span>
             <span class="pull-right-container">
@@ -20,8 +20,8 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li class="active"><a href="<?php echo base_url('admin_1/view_pkm/'); ?>"><i class="fa fa-circle-o"></i>PKM</a></li>
-            <li><a href="index2.html"><i class="fa fa-circle-o"></i> Dashboard v2</a></li>
+            <li><a href="<?php echo base_url('admin_1/view_pkm/'); ?>"><i class="fa fa-circle-o"></i>PKM</a></li>
+            <li><a href="<?php echo base_url('admin_1/view_banksoal/'); ?>"><i class="fa fa-circle-o"></i>Bank Soal</a></li>
           </ul>
         </li>
         <li class="treeview">
