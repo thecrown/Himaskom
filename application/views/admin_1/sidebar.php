@@ -21,40 +21,19 @@
           </a>
           <ul class="treeview-menu">
             <li><a href="<?php echo base_url('admin_1/view_pkm/'); ?>"><i class="fa fa-circle-o"></i>PKM</a></li>
-            <li><a href="<?php echo base_url('admin_1/view_banksoal/'); ?>"><i class="fa fa-circle-o"></i>Bank Soal</a></li>
+            <li><a href="<?php echo base_url('admin_1/add_pkm/'); ?>"><i class="fa fa-circle-o"></i>Add PKM</a></li>
           </ul>
         </li>
         <li class="treeview">
           <a href="#">
-            <i class="fa fa-share"></i> <span>Multilevel</span>
+            <i class="fa fa-share"></i> <span>Bank Soal</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="#"><i class="fa fa-circle-o"></i> Level One</a></li>
-            <li class="treeview">
-              <a href="#"><i class="fa fa-circle-o"></i> Level One
-                <span class="pull-right-container">
-                  <i class="fa fa-angle-left pull-right"></i>
-                </span>
-              </a>
-              <ul class="treeview-menu">
-                <li><a href="#"><i class="fa fa-circle-o"></i> Level Two</a></li>
-                <li class="treeview">
-                  <a href="#"><i class="fa fa-circle-o"></i> Level Two
-                    <span class="pull-right-container">
-                      <i class="fa fa-angle-left pull-right"></i>
-                    </span>
-                  </a>
-                  <ul class="treeview-menu">
-                    <li><a href="#"><i class="fa fa-circle-o"></i> Level Three</a></li>
-                    <li><a href="#"><i class="fa fa-circle-o"></i> Level Three</a></li>
-                  </ul>
-                </li>
-              </ul>
-            </li>
-            <li><a href="#"><i class="fa fa-circle-o"></i> Level One</a></li>
+            <li><a href="<?php echo base_url('admin_1/bank_soal/'); ?>"><i class="fa fa-circle-o"></i>Bank Soal</a></li>
+            <li><a href="<?php echo base_url('admin_1/add_soal/'); ?>"><i class="fa fa-circle-o"></i> Add Bank Soal</a></li>
           </ul>
         </li>
       </ul>
