@@ -21,7 +21,7 @@
           </a>
           <ul class="treeview-menu">
             <li><a href="<?php echo base_url('admin_2/show_sponsor/'); ?>"><i class="fa fa-circle-o"></i>Sponsor</a></li>
-            <li><a href="<?php echo base_url('admin_1/add_pkm/'); ?>"><i class="fa fa-circle-o"></i>Add PKM</a></li>
+            <li><a href="<?php echo base_url('admin_2/add_sponsor/'); ?>"><i class="fa fa-circle-o"></i>Add Sponsor</a></li>
           </ul>
         </li>
         <li class="treeview">

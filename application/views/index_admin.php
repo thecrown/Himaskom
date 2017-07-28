@@ -354,8 +354,8 @@
      <?php 
           if(isset($view_sponsor)):
             $this->load->view('admin_2/'.$view_sponsor);
-          elseif(isset($add_pkm)):
-            $this->load->view('admin_1/'.$add_pkm);
+          elseif(isset($add_sponsor)):
+            $this->load->view('admin_2/'.$add_sponsor);
           elseif(isset($update_pkm)):
             $this->load->view('admin_1/'.$update_pkm);
           elseif(isset($view_pkm)):

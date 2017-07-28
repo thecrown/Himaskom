@@ -151,6 +151,24 @@ class Admin Extends CI_Model{
             return false;
         }
     }
+    public function add_sponsor(){
+        $nama = $this->input->post('nama');
+        $alamat =  $this->input->post('alamat');
+        $keterangan =  $this->input->post('keterangan');
+        $data = array(
+            'nama' =>$nama,
+            'alamat'=>$alamat,
+            'keterangan'=>$keterangan,
+            'status_hapus'=>0,
+            'Bidang_idBidang'=>2
+        );
+        $query = $this->db->insert('tabel_sponsor',$data);
+        if($query){
+            return true;
+        }else{
+            return false;
+        }
+    }
     public function delete_sponsor($id){
         $data = array(
             'status_hapus'=>1
