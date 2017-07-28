@@ -5,7 +5,7 @@
 	<meta charset="utf-8">
 	<title>Welcome To Bank Soal</title>
 </head>
-<link rel="stylesheet" href="<?php echo base_url('assets/').'bootstrap/css/bootstrap.css'; ?>" />
+<link rel="stylesheet" href="<?php echo base_url('assets/	').'bootstrap/css/bootstrap.css'; ?>" />
 <!-- Bootstrap 3.3.7 -->
 <link rel="stylesheet" href="<?php echo base_url('assets'); ?>/bower_components/bootstrap/dist/css/bootstrap.min.css">
 <!-- Font Awesome -->

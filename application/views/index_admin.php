@@ -319,6 +319,8 @@
     <?php 
           if (isset($sidebar)): 
             $this->load->view('admin_1/'.$sidebar);
+          elseif(isset($sidebar2)):
+            $this->load->view('admin_2/'.$sidebar2);
           endif;
     ?>
     <!-- /.sidebar -->
@@ -332,9 +334,26 @@
     <!-- isi content -->
     <?php 
           if(isset($main_dashboard)): 
-            $this->load->view('admin_1/'.$main_dashboard);
+            $this->load->view($main_dashboard);
           elseif(isset($view_banksoal)):
             $this->load->view('admin_1/'.$view_banksoal);
+          elseif(isset($add_pkm)):
+            $this->load->view('admin_1/'.$add_pkm);
+          elseif(isset($update_pkm)):
+            $this->load->view('admin_1/'.$update_pkm);
+          elseif(isset($view_pkm)):
+            $this->load->view('admin_1/'.$view_pkm);
+          elseif(isset($view_banksoal)):
+            $this->load->view('admin_1/'.$view_banksoal);
+          elseif(isset($add_banksoal)):
+            $this->load->view('admin_1/'.$add_banksoal);
+          elseif(isset($update_banksoal)):
+            $this->load->view('admin_1/'.$update_banksoal);
+          endif;
+    ?>
+     <?php 
+          if(isset($view_sponsor)):
+            $this->load->view('admin_2/'.$view_sponsor);
           elseif(isset($add_pkm)):
             $this->load->view('admin_1/'.$add_pkm);
           elseif(isset($update_pkm)):

@@ -138,4 +138,31 @@ class Admin Extends CI_Model{
             return false;
             }
         }
+    //Below are Infokom Model
+    //Sponsor
+    public function sponsor(){
+        $where = array(
+            'status_hapus'=>0
+        );
+        $query = $this->db->get_where('tabel_sponsor',$where);
+        if ($query->num_rows()>0){
+            return $query->result_array();
+        }else{
+            return false;
+        }
+    }
+    public function delete_sponsor($id){
+        $data = array(
+            'status_hapus'=>1
+        );
+        $where =array(
+            'idTabel_sponsor'=>$id
+        );
+        $query = $this->db->update('tabel_sponsor',$data,$where);
+        if($query){
+            return true;
+        }else{
+            return false;
+        }
+    } 
 }
