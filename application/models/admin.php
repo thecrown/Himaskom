@@ -182,5 +182,59 @@ class Admin Extends CI_Model{
         }else{
             return false;
         }
+    }
+    public function get_update_sponsor($id){
+        $where = array(
+            'idTabel_sponsor'=>$id
+        );
+        $query = $this->db->get_where('tabel_sponsor',$where);
+        if($query->num_rows()>0){
+            return $query->result_array();
+        }else{
+            return false;
+        }
+    }
+    public function update_sponsor($id){
+        $where = array(
+            'idTabel_sponsor'=>$id
+        );
+        $data = array(
+            'nama'=>$this->input->post('nama'),
+            'alamat'=>$this->input->post('alamat'),
+            'keterangan'=>$this->input->post('keterangan'),
+            'status_hapus'=>0,
+            'Bidang_idBidang'=>2
+        );
+        $query = $this->db->update('tabel_sponsor',$data,$where);
+        if($query){
+            return true;
+        }else{
+            return false;
+        }
+    }
+    public function alumni(){
+        $where =array(
+            'status_hapus'=>0
+        );
+        $query = $this->db->get_where('alumni',$where);
+        if($query->num_rows()>0){
+            return $query->result_array();
+        }else{
+            return true;
+        }
+    }
+    public function delete_alumni($id){
+        $data = array(
+            'status_hapus'=>1
+        );
+        $where = array(
+            'id_alumni'=>$id
+        );
+        $query = $this->db->update('alumni',$data,$where);
+        if($query){
+            return true;
+        }else{
+            return false;
+        }
     } 
 }

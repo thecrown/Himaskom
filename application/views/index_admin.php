@@ -356,10 +356,10 @@
             $this->load->view('admin_2/'.$view_sponsor);
           elseif(isset($add_sponsor)):
             $this->load->view('admin_2/'.$add_sponsor);
-          elseif(isset($update_pkm)):
-            $this->load->view('admin_1/'.$update_pkm);
-          elseif(isset($view_pkm)):
-            $this->load->view('admin_1/'.$view_pkm);
+          elseif(isset($update_sponsor)):
+            $this->load->view('admin_2/'.$update_sponsor);
+          elseif(isset($view_alumni)):
+            $this->load->view('admin_2/'.$view_alumni);
           elseif(isset($view_banksoal)):
             $this->load->view('admin_1/'.$view_banksoal);
           elseif(isset($add_banksoal)):
