@@ -122,4 +122,5 @@ class Admin_2 extends CI_Controller{
     public function add_alumni(){
 
     }
+    public function update_alumni(){}
 }
