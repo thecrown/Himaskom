@@ -236,5 +236,20 @@ class Admin Extends CI_Model{
         }else{
             return false;
         }
+    }
+    public function add_alumni(){
+        $data = array(
+            'nama'=>$this->input->post('Nama'),
+            'nim'=>$this->input->post('NIM'),
+            'angkatan'=>$this->input->post('Angkatan'),
+            'pekerjaan'=>$this->input->post('Pekerjaan'),
+            'alamat'=>$this->input->post('Alamat')
+        );
+        $query = $this->db->insert('alumni',$data);
+        if($query){
+            return true;
+        }else{
+            return false;
+        }
     } 
 }

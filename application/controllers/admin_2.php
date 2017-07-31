@@ -120,7 +120,32 @@ class Admin_2 extends CI_Controller{
         }
     }
     public function add_alumni(){
-
+        $data['sidebar2']="sidebar2";
+        $data['add_alumni']="add_alumni";
+        $this->load->view('index_admin',$data);
+    }
+    public function verifikasi_alumni(){
+        $this->form_validation->set_rules('Nama','Nama','required|trim|xss_clean');
+        $this->form_validation->set_rules('NIM','Alamat','required|trim|xss_clean');
+        $this->form_validation->set_rules('Angkatan','Angkatan','required|trim|xss_clean');
+        $this->form_validation->set_rules('Pekerjaan','Pekerjaan','required|trim|xss_clean');
+        $this->form_validation->set_rules('Alamat','Alamat','required|trim|xss_clean');
+        if($this->form_validation->run()==false){
+            $data['sidebar2']="sidebar2";
+            $data['add_alumni']="add_alumni";
+            $this->load->view('index_admin',$data);
+        }else{
+            $query = $this->admin->add_alumni();
+            
+            if($query){
+                $this->show_alumni();
+            }else{
+                $data['sidebar2']="sidebar2";
+                $data['view_alumni']="view_alumni";
+                $data['message']="Ada Kesalahan Penyimpanan data";
+                $this->load->view('index_admin',$data);
+            }  
+        }
     }
     public function update_alumni(){}
 }
