@@ -362,8 +362,8 @@
             $this->load->view('admin_2/'.$view_alumni);
           elseif(isset($add_alumni)):
             $this->load->view('admin_2/'.$add_alumni);
-          elseif(isset($add_banksoal)):
-            $this->load->view('admin_1/'.$add_banksoal);
+          elseif(isset($update_alumni)):
+            $this->load->view('admin_2/'.$update_alumni);
           elseif(isset($update_banksoal)):
             $this->load->view('admin_1/'.$update_banksoal);
           endif;

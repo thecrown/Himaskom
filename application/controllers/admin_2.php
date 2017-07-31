@@ -147,5 +147,34 @@ class Admin_2 extends CI_Controller{
             }  
         }
     }
-    public function update_alumni(){}
+    public function update_alumni($id=null){
+        $data['sidebar2']="sidebar2";
+        $data['update_alumni']="update_alumni";
+        $data['alumni']=$this->admin->get_update_alumni($id);
+        $this->load->view('index_admin',$data);
+    }
+    public function verifikasi_update_alumni($id){
+        $this->form_validation->set_rules('Nama','Nama','required|trim|xss_clean');
+        $this->form_validation->set_rules('NIM','Alamat','required|trim|xss_clean');
+        $this->form_validation->set_rules('Angkatan','Angkatan','required|trim|xss_clean');
+        $this->form_validation->set_rules('Pekerjaan','Pekerjaan','required|trim|xss_clean');
+        $this->form_validation->set_rules('Alamat','Alamat','required|trim|xss_clean');
+        if($this->form_validation->run()==false){
+            $data['sidebar2']="sidebar2";
+            $data['update_alumni']="update_alumni";
+            $data['alumni']=$this->admin->get_update_alumni($id);
+            $this->load->view('index_admin',$data);
+        }else{
+            $query = $this->admin->alumni_update($id);
+            
+            if($query){
+                $this->show_alumni();
+            }else{
+                $data['sidebar2']="sidebar2";
+                $data['view_alumni']="view_alumni";
+                $data['message']="Ada Kesalahan Update data";
+                $this->load->view('index_admin',$data);
+            }  
+        }
+    }
 }

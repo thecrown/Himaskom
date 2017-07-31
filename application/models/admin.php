@@ -251,5 +251,34 @@ class Admin Extends CI_Model{
         }else{
             return false;
         }
+    }
+    public function get_update_alumni($id){
+        $where = array(
+            'id_alumni'=>$id
+        );
+        $query =$this->db->get_where('alumni',$where);
+        if($query->num_rows()>0){
+            return $query->result_array();
+        }else{
+            return false;
+        }
+    }
+    public function alumni_update($id){
+        $data = array(
+            'nama'=>$this->input->post('Nama'),
+            'nim'=>$this->input->post('NIM'),
+            'angkatan'=>$this->input->post('Angkatan'),
+            'pekerjaan'=>$this->input->post('Pekerjaan'),
+            'alamat'=>$this->input->post('Alamat')
+        );
+        $where = array(
+            'id_alumni'=>$id
+        );
+        $query = $this->db->update('alumni',$data,$where);
+        if($query){
+            return true;
+        }else{
+            return false;
+        }
     } 
 }
