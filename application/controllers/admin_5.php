@@ -7,7 +7,7 @@ class Admin_5 extends CI_Controller{
         }
     }
     public function index(){
-        echo "berhasil login psdm";
+        echo "berhasil login Sekertaris";
         echo $this->session->curent_name_user;
     }
 }

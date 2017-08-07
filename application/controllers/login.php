@@ -14,7 +14,7 @@ class Login extends CI_Controller{
         $data = array(
         
         'img_path'=>'./assets/captcha/',
-        'img_url'=> 'http://localhost/ci_pro/Himaskom/assets/captcha/',
+        'img_url'=> 'http://localhost/himaskom/assets/captcha/',
         // 'img_url'=> base_url('/assets/captcha/'),
         'img_width'=>120,
         'img_height'=>70,
@@ -81,19 +81,36 @@ class Login extends CI_Controller{
     function admin(){
         switch ($this->session->curent_bidang_user) {
                     case 1:
-                               redirect ('admin_1');
+                        redirect ('admin_1');
+                        //ristek
                         break;
                     case 2:
                         redirect ('admin_2');
+                        //infokom
                         break;
                     case 3:
                         redirect ('admin_3');
+                        //ekobis
                         break;
                     case 4:
                         redirect ('admin_4');
+                        //organisasi
                         break;
                     case 5:
                         redirect ('admin_5');
+                        //sekertaris
+                        break;
+                    case 6:
+                        redirect ('admin_5');
+                        //Bendahara
+                        break;
+                    case 7:
+                        redirect ('admin_5');
+                        //kesma
+                        break;
+                    case 8:
+                        redirect ('admin_5');
+                        //ppmb
                         break;
                     default:
                         echo "faild to login";

@@ -79,11 +79,7 @@ class Admin_1 extends CI_Controller{
                 }
         }
     }
-    public function view_banksoal(){
-        $data['sidebar']="sidebar";
-        $data['view_banksoal']="view_banksoal";
-        $this->load->view('index_admin',$data);
-    }
+    
     public function delete_pkm($id=null){
         $query = $this->admin->delete($id);
         if($query){
@@ -106,7 +102,7 @@ class Admin_1 extends CI_Controller{
         $data['PKM']=$this->admin->get_update($id);
         $this->load->view('index_admin',$data);
     }
-    public function do_update($id){
+    public function do_update($id=null){
         $this->form_validation->set_rules('judul','Judul PKM','xss_clean|trim|required');
         $this->form_validation->set_rules('penulis','Penulis','xss_clean|trim|required');
         $this->form_validation->set_rules('jenis','Jenis PKM','xss_clean|trim|required');
@@ -162,6 +158,11 @@ class Admin_1 extends CI_Controller{
                 }
         }
     }
+    public function view_banksoal(){
+        $data['sidebar']="sidebar";
+        $data['view_banksoal']="view_banksoal";
+        $this->load->view('index_admin',$data);
+    }
     public function bank_soal(){
         $data['sidebar']="sidebar";
         $data['soal']=$this->admin->view_banksoal();
@@ -183,7 +184,7 @@ class Admin_1 extends CI_Controller{
         $date = $this->input->post('date');
         
                 $config['upload_path'] = './assets/file/banksoal/';
-   				$config['allowed_types'] = 'pdf|doc|xml|docx|PDF|DOC|XML|DOCX|xls|xlsx';
+   				$config['allowed_types'] = 'pdf|doc|xml|docx|PDF|DOC|XML|DOCX|xls|xlsx|rar|zip';
   				$config['max_size'] = 200048;
 
    				$config['file_name'] = url_title($matkul,'dash',TRUE);

@@ -7,7 +7,7 @@ class Admin_3 extends CI_Controller{
         }
     }
     public function index(){
-        echo "berhasil login mikat";
+        echo "berhasil login ekobis";
         echo $this->session->curent_name_user;
     }
 }
