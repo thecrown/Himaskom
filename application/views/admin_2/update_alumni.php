@@ -19,7 +19,7 @@
             <!-- form start -->
             <?php if(isset($alumni)){ ?>
             <?php foreach ($alumni as $data){?>
-            <?php echo form_open('admin_2/verifikasi_update_alumni/'.$data['id_alumni']);?>
+            <?php echo form_open('admin_2/verifikasi_update_alumni/'.$data['idAlumni']);?>
               <div class="box-body">
                 <div class="form-group">
                   <label for="exampleInputEmail1">Nama </label>
@@ -31,11 +31,11 @@
                 </div>
                 <div class="form-group">
                   <label for="exampleInputEmail1">Angkatan</label>
-                  <input type="text" class="form-control" id="exampleInputEmail1" value="<?php echo $data['angkatan']; ?>" name="Angkatan" placeholder="Angkatan">
+                  <input type="text" class="form-control" id="exampleInputEmail1" value="<?php echo $data['Angkatan']; ?>" name="Angkatan" placeholder="Angkatan">
                 </div>
                 <div class="form-group">
                   <label for="exampleInputPassword1">Pekerjaan</label>
-                  <input type="text" class="form-control" id="exampleInputPassword1" value="<?php echo $data['pekerjaan']; ?>" name="Pekerjaan" placeholder="Pekerjaan">
+                  <input type="text" class="form-control" id="exampleInputPassword1" value="<?php echo $data['Pekerjaan']; ?>" name="Pekerjaan" placeholder="Pekerjaan">
                 </div>
               </div>
               <!-- /.box-body -->
@@ -55,7 +55,7 @@
                 <!-- select -->
                 <div class="form-group">
                 <label for="exampleInputPassword1">Alamat</label>
-                  <textarea class="form-control" name="Alamat" rows="3" placeholder="Enter ..."><?php echo $data['alamat']; ?></textarea>
+                  <textarea class="form-control" name="Alamat" rows="3" placeholder="Enter ..."><?php echo $data['Alamat']; ?></textarea>
                 </div>
               <?php echo form_close(); ?>
               <?php echo validation_errors(); ?>

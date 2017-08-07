@@ -145,7 +145,7 @@ class Admin Extends CI_Model{
             'status_hapus'=>0
         );
         $query = $this->db->get_where('tabel_sponsor',$where);
-        if ($query->num_rows()>0){
+        if ($query->num_rows()>=0){
             return $query->result_array();
         }else{
             return false;
@@ -217,7 +217,7 @@ class Admin Extends CI_Model{
             'status_hapus'=>0
         );
         $query = $this->db->get_where('alumni',$where);
-        if($query->num_rows()>0){
+        if($query->num_rows()>=0){
             return $query->result_array();
         }else{
             return true;
@@ -228,7 +228,7 @@ class Admin Extends CI_Model{
             'status_hapus'=>1
         );
         $where = array(
-            'id_alumni'=>$id
+            'idAlumni'=>$id
         );
         $query = $this->db->update('alumni',$data,$where);
         if($query){
@@ -241,9 +241,11 @@ class Admin Extends CI_Model{
         $data = array(
             'nama'=>$this->input->post('Nama'),
             'nim'=>$this->input->post('NIM'),
-            'angkatan'=>$this->input->post('Angkatan'),
-            'pekerjaan'=>$this->input->post('Pekerjaan'),
-            'alamat'=>$this->input->post('Alamat')
+            'Angkatan'=>$this->input->post('Angkatan'),
+            'Pekerjaan'=>$this->input->post('Pekerjaan'),
+            'Alamat'=>$this->input->post('Alamat'),
+            'status_hapus'=>0,
+            'Bidang_idBidang'=>2
         );
         $query = $this->db->insert('alumni',$data);
         if($query){
@@ -254,7 +256,7 @@ class Admin Extends CI_Model{
     }
     public function get_update_alumni($id){
         $where = array(
-            'id_alumni'=>$id
+            'idAlumni'=>$id
         );
         $query =$this->db->get_where('alumni',$where);
         if($query->num_rows()>0){
@@ -267,12 +269,12 @@ class Admin Extends CI_Model{
         $data = array(
             'nama'=>$this->input->post('Nama'),
             'nim'=>$this->input->post('NIM'),
-            'angkatan'=>$this->input->post('Angkatan'),
-            'pekerjaan'=>$this->input->post('Pekerjaan'),
-            'alamat'=>$this->input->post('Alamat')
+            'Angkatan'=>$this->input->post('Angkatan'),
+            'Pekerjaan'=>$this->input->post('Pekerjaan'),
+            'Alamat'=>$this->input->post('Alamat'),
         );
         $where = array(
-            'id_alumni'=>$id
+            'idAlumni'=>$id
         );
         $query = $this->db->update('alumni',$data,$where);
         if($query){
@@ -280,5 +282,18 @@ class Admin Extends CI_Model{
         }else{
             return false;
         }
-    } 
+    }
+    //pembicara
+    public function get_pembicara(){
+        $where =array(
+            'status_hapus'=>0
+        );
+        $query = $this->db->get_where('pembicara',$where);
+        if($query->num_rows()>=0){
+            return $query->result_array();
+        }else{
+            return true;
+        }
+    }
+     
 }

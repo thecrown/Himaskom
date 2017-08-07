@@ -177,4 +177,11 @@ class Admin_2 extends CI_Controller{
             }  
         }
     }
+    //pembicara
+    public function show_pembicara(){
+        $data['sidebar2']="sidebar2";
+        $data['show_pembicara']="show_pembicara";
+        $data['pembicara']=$this->admin->get_pembicara();
+        $this->load->view('index_admin',$data);
+    }
 }
