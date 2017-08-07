@@ -295,5 +295,47 @@ class Admin Extends CI_Model{
             return true;
         }
     }
-     
+    public function add_pembicara(){
+        $data = array(
+            'nama'=>$this->input->post('nama'),
+            'kontak'=>$this->input->post('Kontak'),
+            'email'=>$this->input->post('email'),
+            'alamat'=>$this->input->post('alamat'),
+            'keterangan'=>$this->input->post('keterangan'),
+            'status_hapus'=>0,
+            'Bidang_idBidang'=>2
+        );
+        $query = $this->db->insert('pembicara',$data);
+        if($query){
+            return true;
+        }else{
+            return false;
+        }
+    }
+    public function delete_pembicara($id){
+        $where = array(
+            'status_hapus'=>1
+        );
+        $data = array(
+            'idpembicara'=>$id
+        );
+        $query = $this->db->update('pembicara',$where,$data);
+        if($query){
+            return true;
+        }else{
+            return false;
+        }
+    }
+    public function get_update_pembicara($id){
+        $where =array(
+            'idpembicara'=>$id
+
+        );
+        $query = $this->db->get_where('pembicara',$where);
+        if($query->num_rows()>=0){
+            return $query->result_array();
+        }else{
+            return true;
+        }
+    }
 }

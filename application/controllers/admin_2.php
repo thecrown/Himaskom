@@ -184,4 +184,55 @@ class Admin_2 extends CI_Controller{
         $data['pembicara']=$this->admin->get_pembicara();
         $this->load->view('index_admin',$data);
     }
+    public function add_pembicara(){
+        $data['sidebar2']="sidebar2";
+        $data['add_pembicara']="add_pembicara";
+        $this->load->view('index_admin',$data);
+    }
+    public function verifikasi_pembicara(){
+        $this->form_validation->set_rules('nama','Nama','required|trim|xss_clean');
+        $this->form_validation->set_rules('Kontak','Kontak','required|trim|xss_clean');
+        $this->form_validation->set_rules('email','Email','required|trim|xss_clean');
+        $this->form_validation->set_rules('alamat','Alamat','required|trim|xss_clean');
+        $this->form_validation->set_rules('keterangan','Keterangan','required|trim|xss_clean');
+        if($this->form_validation->run()==false){
+            $data['sidebar2']="sidebar2";
+            $data['add_pembicara']="add_pembicara";
+            $this->load->view('index_admin',$data);
+        }else{
+            $query = $this->admin->add_pembicara();
+            
+            if($query){
+                $this->show_pembicara();
+            }else{
+                $data['sidebar2']="sidebar2";
+                $data['show_pembicara']="show_pembicara";
+                $data['pembicara']=$this->admin->get_pembicara();
+                $data['message']="Ada Kesalahan Penyimpanan data";
+                $this->load->view('index_admin',$data);
+            }  
+        }
+    }
+    public function delete_pembicara($id=null){
+        $result = $this->admin->delete_pembicara($id);
+        if($result){
+            $data['sidebar2']="sidebar2";
+            $data['show_pembicara']="show_pembicara";
+            $data['pembicara']=$this->admin->get_pembicara();
+            $data['message']="data pembicara berhasil dihapus";
+            $this->load->view('index_admin',$data);
+        }else{
+            $data['sidebar2']="sidebar2";
+            $data['show_pembicara']="show_pembicara";
+            $data['pembicara']=$this->admin->get_pembicara();
+            $data['message']="data pembicara gagal dihapus";
+            $this->load->view('index_admin',$data);
+        }
+    }
+    public function update_pembicara($id=null){
+        $data['sidebar2']="sidebar2";
+        $data['update_pembicara']="update_pembicara";
+        $data['pembicara']=$this->admin->get_update_pembicara($id);
+        $this->load->view('index_admin',$data);
+    }
 }

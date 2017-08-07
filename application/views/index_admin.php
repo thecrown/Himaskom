@@ -366,6 +366,10 @@
             $this->load->view('admin_2/'.$update_alumni);
           elseif(isset($show_pembicara)):
             $this->load->view('admin_2/'.$show_pembicara);
+          elseif(isset($add_pembicara)):
+            $this->load->view('admin_2/'.$add_pembicara);
+          elseif(isset($update_pembicara)):
+            $this->load->view('admin_2/'.$update_pembicara);
           endif;
     ?>
     <!-- /.content -->
