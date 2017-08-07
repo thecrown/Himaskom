@@ -19,7 +19,7 @@
             <!-- form start -->
             <?php if(isset($pembicara)){ ?>
             <?php foreach ($pembicara as $data) {?>
-            <?php echo form_open('admin_2/verifikasi_pembicara/'.$data['idpembicara']);?>
+            <?php echo form_open('admin_2/verifikasi_update_pembicara/'.$data['idpembicara']);?>
               <div class="box-body">
                 <div class="form-group">
                   <label for="exampleInputEmail1">Nama </label>

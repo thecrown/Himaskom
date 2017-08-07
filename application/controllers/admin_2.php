@@ -235,4 +235,35 @@ class Admin_2 extends CI_Controller{
         $data['pembicara']=$this->admin->get_update_pembicara($id);
         $this->load->view('index_admin',$data);
     }
+    public function verifikasi_update_pembicara($id=null){
+        $this->form_validation->set_rules('nama','Nama','required|trim|xss_clean');
+        $this->form_validation->set_rules('Kontak','Kontak','required|trim|xss_clean');
+        $this->form_validation->set_rules('email','Email','required|trim|xss_clean');
+        $this->form_validation->set_rules('alamat','Alamat','required|trim|xss_clean');
+        $this->form_validation->set_rules('keterangan','Keterangan','required|trim|xss_clean');
+        if($this->form_validation->run()==false){
+            $data['sidebar2']="sidebar2";
+            $data['update_pembicara']="update_pembicara";
+            $data['pembicara']=$this->admin->get_update_pembicara($id);
+            $this->load->view('index_admin',$data);
+        }else{
+            $query = $this->admin->update_pembicara($id);
+            if($query){
+                $this->show_pembicara();
+            }else{
+                $data['sidebar2']="sidebar2";
+                $data['show_pembicara']="show_pembicara";
+                $data['pembicara']=$this->admin->get_pembicara();
+                $data['message']="Ada Kesalahan update data";
+                $this->load->view('index_admin',$data);
+            }  
+        }
+    }
+    //users
+    public function view_users(){
+        $data['sidebar2']="sidebar2";
+        $data['show_users']="show_users";
+        $data['pembicara']=$this->admin->get_users();
+        $this->load->view('index_admin',$data);
+    }
 }
