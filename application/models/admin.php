@@ -427,4 +427,47 @@ class Admin Extends CI_Model{
             return false;
         }
     }
+    //Below are kesma model
+    //beasiswa
+    public function beasiswa(){
+        $where = array(
+            'status_hapus'=>0
+        );
+        $query = $this->db->get_where('beasiswa',$where);
+        if($query->num_rows()>=0){
+            return $query->result_array();
+        }else{
+            return false;
+        }
+    }
+    public function delete_beasiswa($id){
+        $where = array(
+            'idBeasiswa'=>$id
+        );
+        $data = array(
+            'status_hapus'=>1
+        );
+        $query = $this->db->update('beasiswa',$data,$where);
+        if($query){
+            return true;
+        }else{
+            return false;
+        }
+    }
+    public function add_beasiswa(){
+        $data = array(
+            'nama_beasiswa'=>$this->input->post('Nama_beasiswa'),
+            'penerima'=>$this->input->post('Penerima'),
+            'Besar'=>$this->input->post('Besar'),
+            'Tahun'=>$this->input->post('Tahun'),
+            'status_hapus'=>0,
+            'Bidang_idBidang'=>7
+        );
+        $query = $this->db->insert('beasiswa',$data);
+        if($query){
+            return true;
+        }else{
+            return false;
+        }
+    }
 }

@@ -101,15 +101,15 @@ class Login extends CI_Controller{
                         //sekertaris
                         break;
                     case 6:
-                        redirect ('admin_5');
+                        redirect ('admin_6');
                         //Bendahara
                         break;
                     case 7:
-                        redirect ('admin_5');
+                        redirect ('admin_7');
                         //kesma
                         break;
                     case 8:
-                        redirect ('admin_5');
+                        redirect ('admin_8');
                         //ppmb
                         break;
                     default:
