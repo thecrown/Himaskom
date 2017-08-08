@@ -1,11 +1,11 @@
 <section class="content-header">
       <h1>
-        Ristek
-        <small>Add PKM to Database</small>
+        Ekobis
+        <small>Add Wirausaha to Database</small>
       </h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Dashboard</a></li>
-        <li class="active">PKM</li>
+        <li class="active">Ekobis</li>
       </ol>
 </section>
 

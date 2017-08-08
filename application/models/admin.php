@@ -361,7 +361,7 @@ class Admin Extends CI_Model{
         $where = array(
             'status_hapus'=>0
         );
-        $query = $this->db->get_where('	wirausaha',$where);
+        $query = $this->db->get_where('wirausaha',$where);
         if($query->num_rows()>=0){
             return $query->result_array();
         }else{
@@ -406,6 +406,23 @@ class Admin Extends CI_Model{
         $query = $this->db->get_where('wirausaha',$where);
         if($query->num_rows()>=0){
             return $query->result_array();
+        }else{
+            return false;
+        }
+    }
+    public function update_wirausaha($id){
+        $data = array(
+            'Nama_wirausahawan'=>$this->input->post('Nama_wirausahawan'),
+            'Jenis'=>$this->input->post('Jenis'),
+            'Lokasi'=>$this->input->post('Lokasi'),
+            'Tahun'=>$this->input->post('Tahun')
+        );
+        $where = array(
+            'idWirausaha'=>$id
+        );
+        $query = $this->db->update('wirausaha',$data,$where);
+        if($query){
+            return true;
         }else{
             return false;
         }

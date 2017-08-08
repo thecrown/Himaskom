@@ -1,11 +1,11 @@
 <section class="content-header">
       <h1>
-        Ristek
-        <small>Add PKM to Database</small>
+        Ekobis
+        <small>Update Wirausaha From Database</small>
       </h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Dashboard</a></li>
-        <li class="active">PKM</li>
+        <li class="active">Ekobis</li>
       </ol>
 </section>
 
@@ -19,19 +19,19 @@
             <!-- form start -->
             <?php if(isset($wirausaha)){ ?>
             <?php foreach ($wirausaha as $data){ ?>
-            <?php echo form_open('admin_3/verifikasi_wirausaha/'.$data['idWirausaha']);?>
+            <?php echo form_open('admin_3/verifikasi_wirausaha_update/'.$data['idWirausaha']);?>
               <div class="box-body">
                 <div class="form-group">
                   <label for="exampleInputEmail1">Nama Wirausahawan</label>
-                  <input type="text" class="form-control" id="exampleInputEmail1" value="<?php $data['Nama_wirausahawan']; ?>" name="Nama_wirausahawan" placeholder="Nama Wirausahwan">
+                  <input type="text" class="form-control" id="exampleInputEmail1" value="<?php echo $data['Nama_wirausahawan']; ?>" name="Nama_wirausahawan" placeholder="Nama Wirausahwan">
                 </div>
                 <div class="form-group">
                   <label for="exampleInputPassword1">Jenis Usaha</label>
-                  <input type="text" class="form-control" id="exampleInputPassword1" value="<?php $data['Jenis']; ?>" name="Jenis" placeholder="Jenis Usaha">
+                  <input type="text" class="form-control" id="exampleInputPassword1" value="<?php echo $data['Jenis']; ?>" name="Jenis" placeholder="Jenis Usaha">
                 </div>
                 <div class="form-group">
                 <label for="exampleInputPassword1">Lokasi / Alamat :</label>
-                  <textarea class="form-control" name="Lokasi" rows="3" placeholder="Enter ..."><?php $data['Lokasi']; ?></textarea>
+                  <textarea class="form-control" name="Lokasi" rows="3" placeholder="Enter ..."><?php echo $data['Lokasi']; ?></textarea>
                 </div>
               </div>
               <!-- /.box-body -->
@@ -56,7 +56,7 @@
                     <div class="input-group-addon">
                         <i class="fa fa-calendar"></i>
                     </div>
-                    <input type="date" name="Tahun" class="form-control" value="<?php $data['Tahun']; ?>" placeholder="dd-mm-yyyy">
+                    <input type="date" name="Tahun" class="form-control" value="<?php echo $data['Tahun']; ?>" placeholder="dd-mm-yyyy">
                     </div>
                     <!-- /.input group -->
                 </div>

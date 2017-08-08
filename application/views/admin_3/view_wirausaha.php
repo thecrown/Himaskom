@@ -1,14 +1,14 @@
 <section class="content-header">
       <h1>
-        Infokom
-        <small>View All Data Pembicara From Database</small>
+        Ekobis
+        <small>Show Wirausahawan from Database</small>
       </h1>
       <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i>Dashboard</a></li>
-        <li class="active">Sponsor</li>
+        <li><a href="#"><i class="fa fa-dashboard"></i> Dashboard</a></li>
+        <li class="active">Ekobis</li>
       </ol>
-    </section>
-    
+</section>
+
 <section class="content">
       
       <div class="box">
