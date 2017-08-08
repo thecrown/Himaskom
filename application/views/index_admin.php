@@ -321,6 +321,8 @@
             $this->load->view('admin_1/'.$sidebar);
           elseif(isset($sidebar2)):
             $this->load->view('admin_2/'.$sidebar2);
+          elseif(isset($sidebar3)):
+            $this->load->view('admin_3/'.$sidebar3);
           endif;
     ?>
     <!-- /.sidebar -->
@@ -371,7 +373,28 @@
           elseif(isset($update_pembicara)):
             $this->load->view('admin_2/'.$update_pembicara);
           endif;
-    ?>
+        ?>
+      <?php 
+          if(isset($view_wirausaha)):
+            $this->load->view('admin_3/'.$view_wirausaha);
+          elseif(isset($update_wirausaha)):
+            $this->load->view('admin_3/'.$update_wirausaha);
+          elseif(isset($add_wirausaha)):
+            $this->load->view('admin_3/'.$add_wirausaha);
+          elseif(isset($view_alumni)):
+            $this->load->view('admin_2/'.$view_alumni);
+          elseif(isset($add_alumni)):
+            $this->load->view('admin_2/'.$add_alumni);
+          elseif(isset($update_alumni)):
+            $this->load->view('admin_2/'.$update_alumni);
+          elseif(isset($show_pembicara)):
+            $this->load->view('admin_2/'.$show_pembicara);
+          elseif(isset($add_pembicara)):
+            $this->load->view('admin_2/'.$add_pembicara);
+          elseif(isset($update_pembicara)):
+            $this->load->view('admin_2/'.$update_pembicara);
+          endif;
+      ?>
     <!-- /.content -->
   </div>
   <!-- /.content-wrapper -->

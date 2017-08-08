@@ -355,4 +355,59 @@ class Admin Extends CI_Model{
             return false;
         }
     }
+    //Below are ekobis model
+    //wirausaha
+    public function wirausaha(){
+        $where = array(
+            'status_hapus'=>0
+        );
+        $query = $this->db->get_where('	wirausaha',$where);
+        if($query->num_rows()>=0){
+            return $query->result_array();
+        }else{
+            return false;
+        }
+    }
+    public function delete_wirausaha($id){
+        $where = array(
+            'idWirausaha'=>$id
+        );
+        $data = array(
+            'status_hapus'=>1
+        );
+        $query = $this->db->update('wirausaha',$data,$where);
+        if($query){
+            return true;
+        }else{
+            return false;
+        }
+    }
+    
+    public function add_wirausaha(){
+         $data = array(
+            'Nama_wirausahawan'=>$this->input->post('Nama_wirausahawan'),
+            'Jenis'=>$this->input->post('Jenis'),
+            'Lokasi'=>$this->input->post('Lokasi'),
+            'Tahun'=>$this->input->post('Tahun'),
+            'status_hapus'=>0,
+            'Bidang_idBidang'=>3
+        );
+        $query = $this->db->insert('wirausaha',$data);
+        if($query){
+            return true;
+        }else{
+            return false;
+        }
+    }
+    public function get_update_wirausaha($id){
+        $where = array(
+            'idWirausaha'=>$id
+        );
+        $query = $this->db->get_where('wirausaha',$where);
+        if($query->num_rows()>=0){
+            return $query->result_array();
+        }else{
+            return false;
+        }
+    }
 }
