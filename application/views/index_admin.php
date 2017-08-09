@@ -325,6 +325,8 @@
             $this->load->view('admin_3/'.$sidebar3);
           elseif(isset($sidebar7)):
             $this->load->view('admin_7/'.$sidebar7);
+          elseif(isset($sidebar8)):
+            $this->load->view('admin_8/'.$sidebar8);
           endif;
     ?>
     <!-- /.sidebar -->
@@ -392,6 +394,15 @@
             $this->load->view('admin_7/'.$add_beasiswa);
           elseif(isset($update_beasiswa)):
             $this->load->view('admin_7/'.$update_beasiswa);
+          endif;
+      ?>
+      <?php 
+          if(isset($view_mahasiswa)):
+            $this->load->view('admin_8/'.$view_mahasiswa);
+          elseif(isset($add_mahasiswa)):
+            $this->load->view('admin_8/'.$add_mahasiswa);
+          elseif(isset($update_mahasiswa)):
+            $this->load->view('admin_8/'.$update_mahasiswa);
           endif;
       ?>
     <!-- /.content -->

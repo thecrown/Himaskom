@@ -498,4 +498,81 @@ class Admin Extends CI_Model{
             return false;
         }
     }
+    //below are belong to PPMB
+    //Mahasiswa
+    public function mahasiswa(){
+        $where = array(
+            'status_hapus'=>0
+        );
+        $query = $this->db->get_where('mahasiswa',$where);
+        if($query->num_rows()>=0){
+            return $query->result_array();
+        }else{
+            return false;
+        }
+    }
+    public function add_mahasiswa(){
+        $data = array(
+            'Nama'=>$this->input->post('Nama'),
+            'Jalur_Masuk'=>$this->input->post('Jalur_Masuk'),
+            'Alamat_kos'=>$this->input->post('Alamat_kos'),
+            'Alamat_Rumah'=>$this->input->post('Alamat_Rumah'),
+            'No_hp'=>$this->input->post('No_hp'), 
+            'Email'=>$this->input->post('Email'),
+            'Keterangan'=>$this->input->post('Keterangan'),
+            'status_hapus'=>0,
+            'Bidang_idBidang'=>8
+        );
+        $query = $this->db->insert('mahasiswa',$data);
+        if($query){
+            return true;
+        }else{
+            return false;
+        }
+    }
+    public function delete_mahasiswa($id){
+        $where = array(
+            'idMahasiswa'=>$id
+        );
+        $data = array(
+            'status_hapus'=>1
+        );
+        $query = $this->db->update('mahasiswa',$data,$where);
+        if($query){
+            return true;
+        }else{
+            return false;
+        }
+    }
+    public function get_mahasiswa($id){
+        $where = array(
+            'idMahasiswa'=>$id
+        );
+        $query = $this->db->get_where('mahasiswa',$where);
+        if($query->num_rows()>=0){
+            return $query->result_array();
+        }else{
+            return false;
+        }
+    }
+    public function do_update_mahasiswa($id){
+        $where = array(
+            'idMahasiswa'=>$id
+        );
+        $data = array(
+            'Nama'=>$this->input->post('Nama'),
+            'Jalur_Masuk'=>$this->input->post('Jalur_Masuk'),
+            'Alamat_kos'=>$this->input->post('Alamat_kos'),
+            'Alamat_Rumah'=>$this->input->post('Alamat_Rumah'),
+            'No_hp'=>$this->input->post('No_hp'), 
+            'Email'=>$this->input->post('Email'),
+            'Keterangan'=>$this->input->post('Keterangan'),
+        );
+        $query = $this->db->update('mahasiswa',$data,$where);
+        if($query){
+            return true;
+        }else{
+            return false;
+        }
+    }
 }
