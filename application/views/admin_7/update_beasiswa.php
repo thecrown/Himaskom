@@ -17,19 +17,21 @@
           <div class="box box-primary">
             <!-- /.box-header -->
             <!-- form start -->
-            <?php echo form_open('admin_7/verifikasi_beasiswa/');?>
+            <?php if(isset($beasiswa)){ ?>
+            <?php foreach ($beasiswa as $data){ ?>
+            <?php echo form_open('admin_7/verifikasi_update_beasiswa/'.$data['idBeasiswa']);?>
               <div class="box-body">
                 <div class="form-group">
                   <label for="exampleInputPassword1">Penerima Beasiswa</label>
-                  <input type="text" class="form-control" id="exampleInputPassword1" name="Penerima" placeholder="Penerima Beasiswa">
+                  <input type="text" class="form-control" id="exampleInputPassword1" value="<?php echo $data['penerima']; ?>" name="Penerima" placeholder="Penerima Beasiswa">
                 </div>
                 <div class="form-group">
                   <label for="exampleInputEmail1">Jenis Beasiswa</label>
-                  <input type="text" class="form-control" id="exampleInputEmail1" name="Nama_beasiswa" placeholder="Nama Beasiswa">
+                  <input type="text" class="form-control" id="exampleInputEmail1" value="<?php echo $data['nama_beasiswa']; ?>" name="Nama_beasiswa" placeholder="Nama Beasiswa">
                 </div>
                 <div class="form-group">
                 <label for="exampleInputPassword1">Besar(Rp) :</label>
-                  <input type="text" class="form-control" id="exampleInputPassword1" name="Besar" placeholder="Besar Nominal">
+                  <input type="text" class="form-control" id="exampleInputPassword1"  value="<?php echo $data['Besar']; ?>" name="Besar" placeholder="Besar Nominal">
                 </div>
               </div>
               <!-- /.box-body -->
@@ -54,10 +56,11 @@
                     <div class="input-group-addon">
                         <i class="fa fa-calendar"></i>
                     </div>
-                    <input type="date" name="Tahun" class="form-control" placeholder="dd-mm-yyyy">
+                    <input type="date" name="Tahun"  value="<?php echo $data['Tahun']; ?>"  class="form-control" placeholder="dd-mm-yyyy">
                     </div>
                     <!-- /.input group -->
                 </div>
+                <?php }} ?>
                 <!-- /.form group -->
               <?php echo form_close(); ?>
               <?php echo validation_errors(); ?>

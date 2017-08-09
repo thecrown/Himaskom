@@ -470,4 +470,32 @@ class Admin Extends CI_Model{
             return false;
         }
     }
+    public function get_update_beasiswa($id){
+        $where = array(
+            'idBeasiswa'=>$id
+        );
+        $query = $this->db->get_where('beasiswa',$where);
+        if($query->num_rows()>=0){
+            return $query->result_array();
+        }else{
+            return false;
+        }
+    }
+    public function do_update_beasiswa($id){
+        $where = array(
+            'idBeasiswa'=>$id
+            );
+        $data = array(
+            'nama_beasiswa'=>$this->input->post('Nama_beasiswa'),
+            'penerima'=>$this->input->post('Penerima'),
+            'Besar'=>$this->input->post('Besar'),
+            'Tahun'=>$this->input->post('Tahun'),
+        );
+        $query = $this->db->update('beasiswa',$data,$where);
+        if($query){
+            return true;
+        }else{
+            return false;
+        }
+    }
 }

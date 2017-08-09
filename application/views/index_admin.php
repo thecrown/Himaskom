@@ -390,8 +390,8 @@
             $this->load->view('admin_7/'.$view_beasiswa);
           elseif(isset($add_beasiswa)):
             $this->load->view('admin_7/'.$add_beasiswa);
-          elseif(isset($add_wirausaha)):
-            $this->load->view('admin_3/'.$add_wirausaha);
+          elseif(isset($update_beasiswa)):
+            $this->load->view('admin_7/'.$update_beasiswa);
           endif;
       ?>
     <!-- /.content -->
