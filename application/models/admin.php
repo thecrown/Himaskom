@@ -575,4 +575,77 @@ class Admin Extends CI_Model{
             return false;
         }
     }
+    //below are Organisasi model
+    //anggota kepengurusan
+    public function anggota(){
+        $where =array(
+            'status_hapus'=>0
+        );
+        $query = $this->db->get_where('anggota_kepengurusan',$where);
+        if($query->num_rows()>=0){
+            return $query->result_array();
+        }else{
+            return false;
+        }
+    }
+    public function add_anggota(){
+        $data = Array(
+            'Nama_staff'=>$this->input->post('nama'),
+            'Penilaian'=>$this->input->post('Penilaian'),
+            'Alamat'=>$this->input->post('Alamat'),
+            'Bidang'=>$this->input->post('bidang'),
+            'Keterangan'=>$this->input->post('Keterangan'),
+            'status_hapus'=>0,
+            'Bidang_idBidang'=>4
+        );
+        $query = $this->db->insert('anggota_kepengurusan',$data);
+        if($query){
+            return true;
+        }else{
+            return false;
+        }
+    }
+    public function delete_anggota($id){
+        $where = array(
+            'idAnggota_kepengurusan'=>$id
+        );
+        $data = array(
+            'status_hapus'=>1
+        );
+        $query = $this->db->update('anggota_kepengurusan',$data,$where);
+        if($query){
+            return true;
+        }else{
+            return false;
+        }
+    }
+    public function get_anggota($id){
+        $where = array(
+            'idAnggota_kepengurusan'=>$id
+        );
+        $query = $this->db->get_where('anggota_kepengurusan',$where);
+        if($query->num_rows()>=0){
+            return $query->result_array();
+        }else{
+            return false;
+        }
+    }
+    public function do_update($id){
+    	$where = array(
+            'idAnggota_kepengurusan'=>$id
+        );
+        $data = Array(
+            'Nama_staff'=>$this->input->post('nama'),
+            'Penilaian'=>$this->input->post('Penilaian'),
+            'Alamat'=>$this->input->post('Alamat'),
+            'Bidang'=>$this->input->post('bidang'),
+            'Keterangan'=>$this->input->post('Keterangan')
+        );
+        $query = $this->db->update('anggota_kepengurusan',$data,$where);
+        if($query){
+            return true;
+        }else{
+            return false;
+        }
+    }
 }
