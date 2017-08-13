@@ -648,4 +648,118 @@ class Admin Extends CI_Model{
             return false;
         }
     }
+    //Below Are Belong to Sekertaris
+    //surat
+    public function surat(){
+        $where = array(
+            'status_hapus'=>0
+        );
+        $query = $this->db->get_where('surat',$where);
+        if($query->num_rows()>=0){
+            return $query->result_array();
+        }else{
+            return false;
+        }
+    }
+    public function delete_surat($id){
+        $where = array(
+            'idsurat'=>$id
+        );
+        $data = array(
+            'status_hapus'=>1
+        );
+        $query = $this->db->update('surat',$data,$where);
+        if($query){
+            return true;
+        }else{
+            return false;
+        }
+    }
+    public function insert_surat($data){
+
+        $query = $this->db->insert('surat',$data);
+        if($query){
+            return true;
+        }else{
+            return false;
+        }
+    }
+    public function get_update_surat($id){
+        $where = array(
+            'idsurat'=>$id
+        );
+        $query = $this->db->get_where('surat',$where);
+        if($query->num_rows()>=0){
+            return $query->result_array();
+        }else{
+            return false;
+        }
+    }
+    public function do_update_surat($id,$data){
+        $where =array(
+            'idsurat'=>$id
+        );
+        $query = $this->db->update('surat',$data,$where);
+        if($query){
+            return true;
+        }else{
+            return false;
+        }
+    }
+    //proposal
+    public function proposal(){
+        $where = array(
+            'status_hapus'=>0
+        );
+        $query = $this->db->get_where('proposal',$where);
+        if($query->num_rows()>=0){
+            return $query->result_array();
+        }else{
+            return false;
+        }
+    }
+    public function insert_proposal($data){
+        $query = $this->db->insert('proposal',$data);
+        if($query){
+            return true;
+        }else{
+            return false;
+        }
+    }
+    public function delete_proposal($id){
+        $where = array(
+            'idproposal'=>$id
+        );
+        $data = array(
+            'status_hapus'=>1
+        );
+        $query = $this->db->update('proposal',$data,$where);
+        if($query){
+            return true;
+        }else{
+            return false;
+        }
+    }
+    public function get_update_proposal($id){
+        $where =array(
+            'idproposal'=>$id
+        );
+        $query = $this->db->get_where('proposal',$where);
+        if($query->num_rows()>=0){
+            return $query->result_array();
+        }else{
+            return false;
+        }
+    }
+    public function do_update_proposal($id,$data){
+        $where = array(
+            'idproposal'=>$id
+        );
+        $query = $this->db->update('proposal',$data,$where);
+        if($query){
+            return true;
+        }else{
+            return false;
+        }
+    }   
 }
